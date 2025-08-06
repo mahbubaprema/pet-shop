@@ -1,0 +1,602 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   FocoPet
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Custom scrollbar for dropdown */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 10px;
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900">
+  <!-- Top bar hidden but present -->
+  <div class="bg-black text-white text-xs py-1 px-4 flex justify-center items-center gap-2 hidden" style="">
+   <i class="fas fa-truck">
+   </i>
+   <span>
+    Free shipping for orders over $99
+   </span>
+  </div>
+  <!-- Header -->
+  <header class="flex justify-between items-center px-4 md:px-10 py-4 border-b border-gray-200 sticky top-0 bg-white z-30">
+   <div class="flex items-center gap-2">
+    <img alt="FocoPet logo, yellow paw print with text FocoPet" class="w-8 h-8" height="32" src="https://storage.googleapis.com/a1aa/image/b636bf04-b344-46a8-55f1-6316e37005dd.jpg" width="32"/>
+    <span class="font-bold text-yellow-400 text-lg md:text-xl">
+     FocoPet
+    </span>
+   </div>
+   <nav class="hidden md:flex gap-8 font-semibold text-gray-700 text-sm">
+    <a class="hover:text-yellow-400 transition" href="#">
+     Home
+    </a>
+    <a class="hover:text-yellow-400 transition" href="#">
+     Shop
+    </a>
+    <a class="hover:text-yellow-400 transition" href="#">
+     About
+    </a>
+    <a class="hover:text-yellow-400 transition" href="#">
+     Blog
+    </a>
+    <a class="hover:text-yellow-400 transition" href="#">
+     Contact
+    </a>
+   </nav>
+   <div class="flex items-center gap-6 text-gray-700 text-lg">
+    <button aria-label="Search" class="hover:text-yellow-400 transition">
+     <i class="fas fa-search">
+     </i>
+    </button>
+    <button aria-label="User Account" class="hover:text-yellow-400 transition">
+     <i class="fas fa-user">
+     </i>
+    </button>
+    <button aria-label="Shopping Cart" class="hover:text-yellow-400 transition">
+     <i class="fas fa-shopping-cart">
+     </i>
+    </button>
+    <button aria-label="Menu" class="md:hidden hover:text-yellow-400 transition">
+     <i class="fas fa-bars">
+     </i>
+    </button>
+   </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row">
+   <div class="md:w-1/2 bg-yellow-400 flex justify-center items-center p-6 relative">
+    <img alt="A cat, a golden retriever dog, and a parrot standing side by side" class="max-w-full h-auto" height="280" src="https://storage.googleapis.com/a1aa/image/c6861b63-8928-4e64-caf0-0d6b69e85bf6.jpg" width="320"/>
+    <div class="absolute bottom-6 left-6 flex gap-4">
+     <img alt="Bag of dog food with pink packaging" class="w-20 h-20 object-contain" height="80" src="https://storage.googleapis.com/a1aa/image/a3bd0874-3e1d-490d-ca07-4ef613e93213.jpg" width="80"/>
+     <img alt="Bag of cat food with white and pink packaging" class="w-20 h-20 object-contain" height="80" src="https://storage.googleapis.com/a1aa/image/1264b603-ddd5-45d6-4125-f6bc62cb92cf.jpg" width="80"/>
+     <img alt="Bag of bird food with white and pink packaging" class="w-20 h-20 object-contain" height="80" src="https://storage.googleapis.com/a1aa/image/aeab98d2-b010-47c3-fa11-1523bde1b4c7.jpg" width="80"/>
+    </div>
+   </div>
+   <div class="md:w-1/2 bg-yellow-300 flex flex-col justify-center p-8 md:p-16">
+    <h1 class="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900 max-w-lg">
+     Quality pet
+     <span class="line-through decoration-4 decoration-yellow-400">
+      food
+     </span>
+     <span class="text-yellow-600">
+      ensures
+     </span>
+     <br/>
+     pet
+     <span class="font-bold">
+      well-being
+     </span>
+    </h1>
+    <p class="mt-4 text-gray-800 max-w-md text-sm md:text-base">
+     FocoPet is focused, smart, and reliable brand of pet food. All our pet foods, treats, toys, and other pet care items are made with premium quality ingredients.
+    </p>
+    <button class="mt-6 bg-black text-yellow-400 font-semibold px-6 py-3 rounded-md w-max hover:bg-yellow-400 hover:text-black transition">
+     See Products
+    </button>
+   </div>
+  </section>
+  <!-- Pet Product Category -->
+  <section class="px-4 md:px-10 py-12 max-w-7xl mx-auto">
+   <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold text-gray-900">
+     Pet Product Category
+    </h2>
+    <button class="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-md hover:bg-yellow-500 transition text-sm">
+     See all categories
+    </button>
+   </div>
+   <p class="text-gray-600 mb-8 max-w-xl">
+    Welcome to FocoPet! The best products for your pet. We have a wide range of products for every pet type, including dogs, cats, birds, rabbits, and fish.
+   </p>
+   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition">
+     <img alt="Close-up photo of a happy domestic dog looking forward" class="w-20 h-20 object-cover rounded-md mb-2" height="80" src="https://storage.googleapis.com/a1aa/image/8362250c-65f6-4c8d-b39f-5efb3760d482.jpg" width="80"/>
+     <span class="text-sm font-semibold text-gray-800">
+      Domestic Dog
+     </span>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition">
+     <img alt="Close-up photo of a cute cat looking forward" class="w-20 h-20 object-cover rounded-md mb-2" height="80" src="https://storage.googleapis.com/a1aa/image/8a533904-fb8c-4dc3-1c65-fe90736c6624.jpg" width="80"/>
+     <span class="text-sm font-semibold text-gray-800">
+      Super Cat
+     </span>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition">
+     <img alt="Close-up photo of a happy dog looking forward" class="w-20 h-20 object-cover rounded-md mb-2" height="80" src="https://storage.googleapis.com/a1aa/image/5bb0e940-15fe-4ea2-4e6c-3a7d11986a78.jpg" width="80"/>
+     <span class="text-sm font-semibold text-gray-800">
+      Super Dog
+     </span>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition">
+     <img alt="Colorful parrot bird perched on a branch" class="w-20 h-20 object-cover rounded-md mb-2" height="80" src="https://storage.googleapis.com/a1aa/image/32472639-8550-48c2-dc5d-99f8bd54c93f.jpg" width="80"/>
+     <span class="text-sm font-semibold text-gray-800">
+      Local Bird
+     </span>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition">
+     <img alt="White rabbit with pink ears sitting on grass" class="w-20 h-20 object-cover rounded-md mb-2" height="80" src="https://storage.googleapis.com/a1aa/image/2b49c56b-a58b-4217-8571-329b5d2eaac6.jpg" width="80"/>
+     <span class="text-sm font-semibold text-gray-800">
+      Rabbit
+     </span>
+    </div>
+    <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition">
+     <img alt="Goldfish swimming in water" class="w-20 h-20 object-cover rounded-md mb-2" height="80" src="https://storage.googleapis.com/a1aa/image/a4263dc0-7e82-4af7-c443-81670037de38.jpg" width="80"/>
+     <span class="text-sm font-semibold text-gray-800">
+      Gold Fish
+     </span>
+    </div>
+   </div>
+  </section>
+  <!-- Stats Section -->
+  <section class="bg-gray-900 bg-[url('https://placehold.co/600x400/1a202c/1a202c')] bg-no-repeat bg-center bg-opacity-20 py-12">
+   <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-12 text-center text-white">
+    <div>
+     <div class="text-5xl font-extrabold mb-2">
+      86+
+     </div>
+     <div class="uppercase font-semibold tracking-widest text-sm">
+      Award
+     </div>
+    </div>
+    <div class="flex flex-col items-center">
+     <img alt="Close-up photo of a black dog head" class="w-24 h-24 rounded-full object-cover mb-2 border-4 border-white" height="96" src="https://storage.googleapis.com/a1aa/image/41694845-cd67-487f-ef81-be3dd85f259f.jpg" width="96"/>
+     <div class="uppercase font-semibold tracking-widest text-sm">
+      92+ Employees
+     </div>
+    </div>
+    <div>
+     <div class="text-5xl font-extrabold mb-2">
+      95k
+     </div>
+     <div class="uppercase font-semibold tracking-widest text-sm">
+      Customer
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Most Popular Products -->
+  <section class="max-w-7xl mx-auto px-4 md:px-10 py-12">
+   <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold text-gray-900">
+     Our Most Popular Products
+    </h2>
+    <button class="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-md hover:bg-yellow-500 transition text-sm">
+     See all products
+    </button>
+   </div>
+   <div class="flex flex-wrap gap-3 mb-6 text-sm font-semibold text-gray-700">
+    <button class="bg-red-500 text-white rounded-full px-3 py-1">
+     All Items
+    </button>
+    <button class="bg-gray-200 rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black transition">
+     Dog Food
+    </button>
+    <button class="bg-gray-200 rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black transition">
+     Cat Food
+    </button>
+    <button class="bg-gray-200 rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black transition">
+     Bird Food
+    </button>
+    <button class="bg-gray-200 rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black transition">
+     Pet Treats
+    </button>
+    <button class="bg-gray-200 rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black transition">
+     Pet Toys
+    </button>
+   </div>
+   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    <div class="flex flex-col items-center text-center">
+     <img alt="White pouch of dog chicken dry premium food with blue label" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/d8e0e6af-1803-4a92-d652-70c94fb52671.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      White Pouch, White Pouch, Dry chicken dry premium dog food
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $36.99
+     </p>
+    </div>
+    <div class="flex flex-col items-center text-center">
+     <img alt="Brown bag of home mix tender garden dry food for dogs" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/2d003c8c-9067-4442-b7f7-577fabc979e0.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      Home Mix Tender Garden Dry Food, Senior
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $30.20
+     </p>
+    </div>
+    <div class="flex flex-col items-center text-center">
+     <img alt="Yellow bag of kynwise wild treat next &amp; wild seed pet food" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/117b3bf3-6cc1-4694-8297-0b9fd625a752.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      Kynwise Wild Treat Next &amp; Wild Seed Pet Food
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $72.00
+     </p>
+    </div>
+    <div class="flex flex-col items-center text-center">
+     <img alt="Green bag of k9 natural freeze-dried raw pet food for adult dogs" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/df00b4d3-3467-4678-a973-e0ac1053d7dc.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      K9 Natural Freeze-Dried Raw Pet Food, Adult
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $27.00
+     </p>
+    </div>
+    <div class="flex flex-col items-center text-center">
+     <img alt="White bag of goldfish flakes 2.5 oz premium cat food with vitamins" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/14144c3a-0908-4fb4-b1d0-6fe7068799d1.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      Goldfish Flakes 2.5 Oz Premium Cat Food, With Vitamins
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $25.99
+     </p>
+    </div>
+    <div class="flex flex-col items-center text-center">
+     <img alt="White box of premium adult dog food with chicken and rice" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/b1fe2cf9-f3ea-4238-e5be-a74d51fd9c08.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      Premium Adult Dog Food, Chicken &amp; Rice
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $26.99
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Best Selling & Promo -->
+  <section class="max-w-7xl mx-auto px-4 md:px-10 py-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+   <div class="bg-blue-900 text-white rounded-lg p-6 flex flex-col items-center justify-center gap-6">
+    <h3 class="text-xl font-extrabold uppercase tracking-widest">
+     Try Our
+    </h3>
+    <h2 class="text-3xl font-extrabold">
+     Best Selling
+    </h2>
+    <p class="text-center max-w-xs">
+     Nutrition &amp; Delicious Food
+    </p>
+    <img alt="Various best selling pet food packages including bags and cans" class="w-full max-w-xs object-contain" height="280" src="https://storage.googleapis.com/a1aa/image/a3685191-80f9-4529-52ce-dc8c275f55c0.jpg" width="280"/>
+   </div>
+   <div class="grid grid-rows-2 gap-6">
+    <div class="bg-yellow-400 rounded-lg p-6 flex flex-col justify-center items-center text-center text-black font-bold text-lg">
+     <p>
+      Foco Pet 60% OFF
+     </p>
+     <p class="text-2xl mt-2">
+      GET IT NOW
+     </p>
+     <img alt="Colorful promotional image of pet food bags with a cat and dog" class="mt-4 w-full object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/48179fc0-513b-4550-8a90-0f84192404fc.jpg" width="280"/>
+    </div>
+    <div class="bg-blue-900 rounded-lg p-6 flex flex-col justify-center items-center text-center text-yellow-400 font-bold text-lg">
+     <p>
+      Free Delivery
+     </p>
+     <p class="text-2xl mt-2">
+      On your first order
+     </p>
+     <img alt="Gift box with ribbon and delivery truck icon representing free delivery" class="mt-4 w-full object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/a35f739a-0659-4627-f135-746b720c9299.jpg" width="280"/>
+    </div>
+   </div>
+  </section>
+  <!-- Latest Items -->
+  <section class="max-w-7xl mx-auto px-4 md:px-10 py-12">
+   <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold text-gray-900">
+     Our Latest Items
+    </h2>
+    <button class="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-md hover:bg-yellow-500 transition text-sm">
+     See all products
+    </button>
+   </div>
+   <p class="text-gray-600 mb-8 max-w-xl">
+    Welcome to FocoPet! The best products for your pet. We have a wide range of products for every pet type, including dogs, cats, birds, rabbits, and fish.
+   </p>
+   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    <div class="flex flex-col items-center text-center">
+     <img alt="Yellow pouch of dry dog food with chicken flavor" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/ec1ee6ae-c3f1-4d70-05f0-e5fe3eeea733.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      Tasty Dry Dog Food with Chicken Flavor
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $30.20
+     </p>
+    </div>
+    <div class="flex flex-col items-center text-center">
+     <img alt="Brown pouch of home mix tender garden dry food for dogs" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/820d5ec6-b59e-4b64-b203-1257c12f95a5.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      Home Mix Tender Garden Dry Food, Senior
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $12.00
+     </p>
+    </div>
+    <div class="flex flex-col items-center text-center">
+     <img alt="Green bag of exotic bird fruit and treat" class="w-28 h-28 object-contain mb-2" height="120" src="https://storage.googleapis.com/a1aa/image/e595a8aa-efad-49c8-177e-b807003195ef.jpg" width="120"/>
+     <h3 class="text-xs font-semibold text-gray-900">
+      Exotic Bird Fruit and Treat, Smaller Dog Treats
+     </h3>
+     <p class="text-yellow-400 font-bold mt-1">
+      $25.99
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Feedback From Users -->
+  <section class="bg-gray-900 text-white py-16 px-4 md:px-10 max-w-7xl mx-auto rounded-lg flex flex-col md:flex-row items-center gap-8">
+   <img alt="Smiling woman wearing a gray beanie and yellow sweater holding a small dog" class="w-40 h-40 rounded-full object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/09a10384-ebb7-4605-1e3b-f96d0efa61cb.jpg" width="160"/>
+   <div class="max-w-3xl">
+    <p class="text-3xl font-bold mb-4">
+     “Feedback From Users”
+    </p>
+    <p class="text-gray-300 mb-6">
+     FocoPet is here to help. We provide best pet foods for dogs, cats, birds, rabbits, and fish. Our products are made with premium quality ingredients, ensuring the best care for your pets.
+    </p>
+    <p class="font-semibold">
+     Emily Rodriguez
+    </p>
+    <div class="flex gap-4 mt-2 text-yellow-400 text-lg">
+     <i class="fab fa-facebook-square cursor-pointer hover:text-yellow-300 transition">
+     </i>
+     <i class="fab fa-twitter-square cursor-pointer hover:text-yellow-300 transition">
+     </i>
+    </div>
+   </div>
+  </section>
+  <!-- Shop By Brand -->
+  <section class="max-w-7xl mx-auto px-4 md:px-10 py-12">
+   <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">
+    Shop By Brand
+   </h2>
+   <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+    Welcome to FocoPet! We have a wide range of products from the best brands in the pet industry. Explore our brands and find the perfect products for your pets.
+   </p>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="bg-yellow-400 rounded-lg p-6 flex flex-col items-center text-black cursor-pointer hover:bg-yellow-500 hover:text-white transition">
+     <h3 class="text-xl font-bold mb-2">
+      Junipet
+     </h3>
+     <p class="text-sm text-center">
+      Junipet is a trusted brand for pet food and accessories, known for quality and care.
+     </p>
+    </div>
+    <div class="bg-blue-900 rounded-lg p-6 flex flex-col items-center text-white cursor-pointer hover:bg-blue-800 transition">
+     <h3 class="text-xl font-bold mb-2">
+      Pilotcat
+     </h3>
+     <p class="text-sm text-center">
+      Pilotcat offers premium cat food products with natural ingredients and great taste.
+     </p>
+    </div>
+    <div class="bg-green-900 rounded-lg p-6 flex flex-col items-center text-white cursor-pointer hover:bg-green-800 transition">
+     <h3 class="text-xl font-bold mb-2">
+      Kinfoko
+     </h3>
+     <p class="text-sm text-center">
+      Kinfoko is known for its innovative pet toys and treats that keep pets happy and healthy.
+     </p>
+    </div>
+    <div class="bg-orange-500 rounded-lg p-6 flex flex-col items-center text-white cursor-pointer hover:bg-orange-600 transition">
+     <h3 class="text-xl font-bold mb-2">
+      Panerdog
+     </h3>
+     <p class="text-sm text-center">
+      Panerdog specializes in nutritious dog food and accessories for all breeds and sizes.
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Discover Full Range -->
+  <section class="bg-gray-900 text-white py-12 px-4 md:px-10 max-w-7xl mx-auto rounded-lg">
+   <h2 class="text-2xl font-bold mb-6 text-center">
+    Discover Our Full Range Of Pet Products
+   </h2>
+   <div class="max-w-md mx-auto">
+    <ul class="divide-y divide-gray-700">
+     <li class="flex justify-between py-3 cursor-pointer hover:text-yellow-400 transition">
+      <span>
+       Accessories
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="flex justify-between py-3 cursor-pointer hover:text-yellow-400 transition">
+      <span>
+       Nutrition
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="flex justify-between py-3 cursor-pointer hover:text-yellow-400 transition">
+      <span>
+       Animal Food
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="flex justify-between py-3 cursor-pointer hover:text-yellow-400 transition">
+      <span>
+       Animal Toys
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="flex justify-between py-3 cursor-pointer hover:text-yellow-400 transition">
+      <span>
+       Pet Clothes
+      </span>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+    </ul>
+   </div>
+  </section>
+  <!-- Latest Pet Blog -->
+  <section class="max-w-7xl mx-auto px-4 md:px-10 py-12">
+   <h2 class="text-2xl font-bold text-gray-900 mb-8">
+    Our Latest Pet Blog
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="flex flex-col md:flex-row gap-4">
+     <img alt="Dog and owner playing in a park" class="w-full md:w-40 h-28 object-cover rounded-lg" height="120" src="https://storage.googleapis.com/a1aa/image/6bb839ae-e289-426f-6f3e-617e92816058.jpg" width="160"/>
+     <div>
+      <h3 class="font-semibold text-gray-900 mb-1">
+       At FocoPet, Dogs are Always Treated as Family and Friends
+      </h3>
+      <p class="text-gray-600 text-sm">
+       We provide the best pet food and care tips to keep your dog happy and healthy.
+      </p>
+      <button class="mt-2 text-yellow-400 font-semibold text-sm hover:underline">
+       See All Blog
+      </button>
+     </div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-4">
+     <img alt="Happy dog running in the grass" class="w-full md:w-40 h-28 object-cover rounded-lg" height="120" src="https://storage.googleapis.com/a1aa/image/626aa492-37ea-407c-e6e2-4ca37fe14de1.jpg" width="160"/>
+     <div>
+      <h3 class="font-semibold text-gray-900 mb-1">
+       Guide To Choosing The Right Pet Food
+      </h3>
+      <p class="text-gray-600 text-sm">
+       Learn how to select the best food for your pet’s health and well-being.
+      </p>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:col-span-2">
+     <div class="flex flex-col gap-2">
+      <img alt="Colorful dog toys on a wooden floor" class="w-full h-28 object-cover rounded-lg" height="120" src="https://storage.googleapis.com/a1aa/image/a50f098b-96b4-49e2-7103-15ab587fe164.jpg" width="160"/>
+      <h3 class="font-semibold text-gray-900 text-sm">
+       Top 10 Must-Have Accessories for Your Pet’s Happiness
+      </h3>
+     </div>
+     <div class="flex flex-col gap-2">
+      <img alt="Person training a dog in a park" class="w-full h-28 object-cover rounded-lg" height="120" src="https://storage.googleapis.com/a1aa/image/b5446f25-e77e-4c4f-1a10-b593af15f1b4.jpg" width="160"/>
+      <h3 class="font-semibold text-gray-900 text-sm">
+       Building A Strong Foundation For Good Behavior
+      </h3>
+     </div>
+     <div class="flex flex-col gap-2">
+      <img alt="Dog and owner playing with a ball" class="w-full h-28 object-cover rounded-lg" height="120" src="https://storage.googleapis.com/a1aa/image/e3105c9a-7708-4406-9fd3-b155e77fbea2.jpg" width="160"/>
+      <h3 class="font-semibold text-gray-900 text-sm">
+       Maintaining Dental Health For Your Excited Pets
+      </h3>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Our Story -->
+  <section class="bg-yellow-400 text-gray-900 py-12 px-4 md:px-10 max-w-7xl mx-auto rounded-lg text-center">
+   <h2 class="text-2xl font-bold mb-4">
+    Our Story
+   </h2>
+   <p class="max-w-3xl mx-auto mb-6">
+    We’re committed to FocoPet and the best pet food for all pets. Our story is about passion, care, and quality. Join us on this journey to provide the best for your pets.
+   </p>
+   <button class="bg-black text-yellow-400 font-semibold px-6 py-3 rounded-md hover:bg-yellow-400 hover:text-black transition">
+    Learn More
+   </button>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-pink-400 text-gray-900 py-8 px-4 md:px-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+   <div class="text-sm">
+    <p>
+     © 2024 FocoPet | Pet Passion Updates
+    </p>
+    <p>
+     Environmental
+    </p>
+   </div>
+   <div class="flex gap-6 text-sm">
+    <div>
+     <h4 class="font-semibold mb-2">
+      Quick Links
+     </h4>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="#">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Shop
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        About
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h4 class="font-semibold mb-2">
+      Help
+     </h4>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="#">
+        FAQ
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Shipping
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Returns
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Support
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="text-6xl font-extrabold tracking-widest select-none" style="font-family: 'Poppins', cursive, sans-serif;">
+    FocoPet
+   </div>
+  </footer>
+ </body>
+</html>
